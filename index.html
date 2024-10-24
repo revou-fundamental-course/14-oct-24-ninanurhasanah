@@ -3,89 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <title>NextGen Innovations</title>
+    <link rel="icon" href="/assets/ng-logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    <!-- Logi icon & Navigasi -->
-    <header class="main-header">
-        <!-- Logo -->
-        <div class="logo-icon"></div>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="/assets/ng-logo.png" alt="NextGen Innovation">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#profile">Profile</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
 
-        <!-- Navigasi -->
-        <nav>
-            <a href="#section-home">Home</a>
-            <a href="#section-profile">Profile</a>
-            <a href="#section-portofolio">Portofolio</a>
-            <a href="#section-massage-us">Massage Us</a>
-        </nav>
-    </header>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
 
-        <hr>
-    
-    <!-- Konten -->
-    <main>
-        <!-- Section Home -->
-        <section id="section-home">
-            <header>
-                <h1>Hi User, Welcome to My Website</h1>
-            </header>
+    <!-- Home Page -->
+    <div id="home">
+        <!-- Banner -->
+        <div class="banner">
+            <div class="banner-text" id="bannerText">Welcome to <br> NextGen Innovation Website</div>
+        </div>
+        <div class="input-container">
+            <h4>Enter your name</h4>
+            <input type="text" id="nameInput" placeholder="Write your name here">
+            <button onclick="displayUserName()">Submit</button>
+        </div>
+    </div>
 
-            <article>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+    <!-- Profile Page -->
+    <section id="profile">
+        <div id="about-company">
+            <h2>About NextGen Innovations</h2>
+            <p>NextGen Innovations is a forward-thinking technology company dedicated to driving innovation and progress in the digital age. We specialize in developing cutting-edge solutions that empower businesses and individuals to achieve more through technology. Our team is passionate about creating impactful software, AI-driven tools, and sustainable technology that enhances productivity, fosters creativity, and shapes a better future for our clients and communities worldwide.</p>
+        </div>
+        <div id="vision-mission">
+            <h2>Vision</h2>
+            <p>To be a global leader in technology innovation, transforming industries and creating a more connected, efficient, and sustainable world through intelligent solutions.</p>
+            <h2>Mission</h2>
+            <ol>
+                <li>To deliver innovative, high-quality technology solutions that solve real-world problems.</li>
+                <li>To empower businesses and individuals with tools that enhance efficiency, creativity, and growth.</li>
+                <li>To lead the way in sustainable and responsible technology development for a better future.</li>
+                <li>To foster a culture of continuous learning, creativity, and collaboration within our team and with our clients.</li>
+                <li>To remain at the forefront of technological advancements, ensuring our solutions evolve with the dynamic needs of the digital world.</li>
+            </ol>
+        </div>
+    </section>
 
-                <!-- Photo Banner -->
-                 <div class="photo-banner"></div>
-            </article>
-        </section>
-
-        <hr>
-
-        <!-- Section Profile -->
-        <section>
-            <header id="section-profile">
-                <h1>Profile</h1>
-            </header>
-
-            <article>
-                <div class="article"></div>
-            </article>
-        </section>
-
-        <hr>
-
-        <!-- Section Portfolio -->
-        <section id="section-portfolio">
-            <header>
-                <h1>Portfolio</h1>
-            </header>
-            <article>
-                <div class="article"></div>
-            </article>
-        </section>
-
-        <hr>
-
-        <!-- Section Massage Us -->
-        <section id="section-massage-us">
-            <header>
-                <h1>Massage Us</h1>
-            </header>
-
-            <div class="massage-container">
-                <form action=""></form>
-                <div></div>
+    <!-- Portfolio -->
+        <div id="portfolio" class="portfolio">
+            <h2>Portfolio</h2>
+            <div class="mySlides fade">
+                <img src="/assets/slide1.jpg" style="width:100%">
             </div>
+            <div class="mySlides fade">
+                <img src="/assets/slide2.jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="/assets/slide3.jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="/assets/slide4.jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="/assets/slide5.jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="/assets/slide6.jpg" style="width:100%">
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+            <span class="dot" onclick="currentSlide(4)"></span> 
+            <span class="dot" onclick="currentSlide(5)"></span> 
+            <span class="dot" onclick="currentSlide(6)"></span> 
+        </div>
 
-        </section>
-    </main>
+    <!-- Contact Form -->
+    <section id="contact">
+        <h2>Message Us</h2>
+        <form id="messageForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <div class="error" id="nameError"></div>
+    
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+            <div class="error" id="dobError"></div>
+    
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            <div class="error" id="genderError"></div>
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <div class="error" id="emailError"></div>
+    
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <div class="error" id="messageError"></div>
+    
+            <button type="submit">Submit</button>
+        </form>
+        <div id="formOutput"></div>
+    </section>
 
-    <hr>
-
-    <!-- Copyright -->
-    <footer>
-        <div>Copyright Made by nnvnjm@2024</div>
-    </footer>
+    <script src="/js/script.js"></script>
 </body>
+
+<footer>
+    <p>&copy; 2024 NextGen Innovation. Follow us on:
+        <a href="https://facebook.com/nnvnjm" target="_blank">Facebook</a> |
+        <a href="https://twitter.com/nnvnjm" target="_blank">Twitter</a> |
+        <a href="https://instagram.com/nnvnjm" target="_blank">Instagram</a>
+    </p>
+</footer>
+
 </html>
